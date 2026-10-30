@@ -4,6 +4,20 @@
 /* Twelve immediately available levels and larger graphs. */
 #levels{flex-wrap:wrap}.levelbar{flex-wrap:wrap}.board.many .resident{width:80px;height:80px}.board.many .resident .amount{font-size:29px}.board.many .resident .small-id{top:7px;right:14px}.board.many .resident>span:not(.amount):not(.small-id){font-size:14px}
 @media(max-width:760px){.board.many .resident{width:72px;height:72px}.board.many .resident .amount{font-size:27px}}
+
+/* Scroll the page when swiping the graph; editor cards retain dragging. */
+.board,.resident{touch-action:pan-y pinch-zoom}
+.editing .resident{touch-action:none}
+@media(max-width:900px){
+ html{height:auto;overflow-y:auto}
+ body{height:auto;min-height:100%;overflow-y:visible;background-attachment:scroll}
+ .app{height:auto;min-height:100dvh}
+ main{flex:none;display:flex;flex-direction:column;min-height:auto}
+ .game,aside{flex:none;min-height:auto}
+ .board{flex:none;height:340px}
+ .history{flex:none;min-height:180px;max-height:270px}
+ #history-list{touch-action:pan-y pinch-zoom}
+}
 </style><style>/* Watercolor washes and procedural paper grain. No external assets. */
 :root{background:#f6f3ec;--green:#346b60;--line:#d7ded2;--muted:#65776c;color:#243b35}
 body{background:radial-gradient(ellipse at 4% 8%,#b4d3cc70 0,transparent 35%),radial-gradient(ellipse at 94% 82%,#c7c0df60 0,transparent 38%),radial-gradient(ellipse at 78% 0%,#e9cfad60 0,transparent 32%),#f7f4ed;isolation:isolate}
